@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'Screens/categories_screen/categories_screen.dart';
 import "Screens/categories_meal_screen/categories_meal_screen.dart";
+import "./Screens/meal_details_screen/meal_details_screen.dart";
+// import "Screens/favorite-_screen/favorite_screen.dart";
+import "./Screens/tabs_screen/tab_screen.dart";
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +21,8 @@ class MyApp extends StatelessWidget {
         //***/ check for bg of scaffold
         // scaffoldBackgroundColor: Color.fromARGB(255, 182, 39, 39),
 
-        canvasColor: Colors.red,
+        canvasColor: const Color.fromRGBO(5, 63, 93, 1),
+
         fontFamily: "Raleway",
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyLarge: const TextStyle(
@@ -30,7 +34,7 @@ class MyApp extends StatelessWidget {
               titleMedium: const TextStyle(
                   fontSize: 18,
                   fontFamily: "RobotoCondensed",
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.normal),
             ),
         // primarySwatch: Color.fromRGBO(5, 63, 93, 1),
         colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -38,8 +42,16 @@ class MyApp extends StatelessWidget {
           secondary: const Color(0xFFFFC107),
         ),
       ),
-      home: const MyHomePage(),
-      routes: {"/category-meals": (context) => CategoriesMealsScreen()},
+      // home: const MyHomePage(),
+      routes: {
+        "/": (context) => const TabScreen(),
+        CategoriesMealsScreen.routeName: (context) =>
+            const CategoriesMealsScreen(),
+        MealDetailScreen.routeName: (context) => const MealDetailScreen(),
+      },
+
+      onUnknownRoute: (settings) => MaterialPageRoute(
+          builder: (context) => const CategoriesMealsScreen()),
     );
   }
 }
