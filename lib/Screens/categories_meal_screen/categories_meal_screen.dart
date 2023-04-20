@@ -16,6 +16,12 @@ class _CategoriesMealsScreenState extends State<CategoriesMealsScreen> {
   var _loder = false;
   late List<Meal> displayedMeals;
 
+  void removeItem(String mealId) {
+    setState(() {
+      displayedMeals.removeWhere((meal) => meal.id == mealId);
+    });
+  }
+
   @override
   void didChangeDependencies() {
     if (!_loder) {
@@ -30,12 +36,6 @@ class _CategoriesMealsScreenState extends State<CategoriesMealsScreen> {
       _loder = true;
     }
     super.didChangeDependencies();
-  }
-
-  void removeMeal(String mealId) {
-    setState(() {
-      displayedMeals.removeWhere((meal) => meal.id == mealId);
-    });
   }
 
   @override
@@ -55,7 +55,7 @@ class _CategoriesMealsScreenState extends State<CategoriesMealsScreen> {
               duration: displayedMeals[index].duration,
               affordability: displayedMeals[index].affordability,
               complexity: displayedMeals[index].complexity,
-              removeMeal: removeMeal,
+              removeItem: removeItem,
             );
           },
           itemCount: displayedMeals.length,

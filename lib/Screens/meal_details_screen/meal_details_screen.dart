@@ -11,7 +11,7 @@ class MealDetailScreen extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         text,
-        style: Theme.of(context).textTheme.titleMedium,
+        style: Theme.of(context).textTheme.titleLarge,
       ),
     );
   }
@@ -22,8 +22,8 @@ class MealDetailScreen extends StatelessWidget {
             color: Colors.white,
             border: Border.all(color: Colors.grey),
             borderRadius: BorderRadius.circular(10)),
-        height: 150,
-        width: 300,
+        height: 200,
+        width: 350,
         margin: const EdgeInsets.all(10),
         padding: const EdgeInsets.all(10),
         child: child);
@@ -34,10 +34,9 @@ class MealDetailScreen extends StatelessWidget {
     // final isLandscape =
     //     MediaQuery.of(context).orientation == Orientation.landscape;
 
-    final mealId =
-        ModalRoute.of(context)?.settings.arguments as Map<String, String>;
-    final id = mealId["id"];
-    final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == id);
+    final mealId = ModalRoute.of(context)!.settings.arguments as String;
+
+    final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
 
     return Scaffold(
       appBar: AppBar(
@@ -93,7 +92,7 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.delete),
+        child: const Icon(Icons.delete),
         onPressed: () {
           Navigator.of(context).pop(mealId);
         },

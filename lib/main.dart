@@ -25,17 +25,21 @@ class MyApp extends StatelessWidget {
 
         fontFamily: "Raleway",
         textTheme: ThemeData.light().textTheme.copyWith(
-              bodyLarge: const TextStyle(
-                color: Color.fromRGBO(22, 22, 22, 1),
-              ),
-              bodyMedium: const TextStyle(
-                color: Color.fromRGBO(22, 22, 22, 1),
-              ),
-              titleMedium: const TextStyle(
-                  fontSize: 18,
-                  fontFamily: "RobotoCondensed",
-                  fontWeight: FontWeight.normal),
+            bodyLarge: const TextStyle(
+              color: Color.fromRGBO(22, 22, 22, 1),
             ),
+            bodyMedium: const TextStyle(
+              color: Color.fromRGBO(22, 22, 22, 1),
+            ),
+            titleMedium: const TextStyle(
+                fontSize: 18,
+                fontFamily: "RobotoCondensed",
+                fontWeight: FontWeight.normal),
+            titleLarge: const TextStyle(
+                fontSize: 24,
+                fontFamily: "RobotoCondensed",
+                fontWeight: FontWeight.bold)),
+
         // primarySwatch: Color.fromRGBO(5, 63, 93, 1),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color.fromRGBO(5, 63, 93, 1),
