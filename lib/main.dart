@@ -52,30 +52,10 @@ class MyApp extends StatelessWidget {
         CategoriesMealsScreen.routeName: (context) =>
             const CategoriesMealsScreen(),
         MealDetailScreen.routeName: (context) => const MealDetailScreen(),
-        const FilterScreen().routeName: (context) => const FilterScreen()
+        FilterScreen.routeName: (context) => const FilterScreen()
       },
-
       onUnknownRoute: (settings) => MaterialPageRoute(
           builder: (context) => const CategoriesMealsScreen()),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      // appBar: AppBar(
-      //   title: const Text("DeliMeals"),
-      // ),
-      body: CategoriesScreen(),
     );
   }
 }

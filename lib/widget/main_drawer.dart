@@ -25,38 +25,45 @@ class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          Container(
-            height: 120,
-            width: double.infinity,
-            padding: const EdgeInsets.all(20),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondary,
-              borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10)),
-            ),
-            child: Text(
-              "Cooking Up!",
-              style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 30,
-                  color: Theme.of(context).colorScheme.primary),
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Container(
+                  height: 120,
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(20),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                    borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                  ),
+                  child: Text(
+                    "Cooking Up!",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30,
+                        color: Theme.of(context).colorScheme.primary),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                listTileBuilder("Meals", Icons.restaurant,
+                    () => {Navigator.of(context).pushReplacementNamed("/")}),
+                listTileBuilder("Filters", Icons.settings, () {
+                  Navigator.of(context).pushReplacementNamed("/filter");
+                }),
+                listTileBuilder("Help and Support", Icons.help_center, () {}),
+                listTileBuilder("Language", Icons.language, () {}),
+                listTileBuilder("Services", Icons.support, () {}),
+              ],
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          listTileBuilder("Meals", Icons.restaurant,
-              () => {Navigator.of(context).pushReplacementNamed("/")}),
-          listTileBuilder("Filters", Icons.settings, () {
-            Navigator.of(context).pushReplacementNamed("/filter");
-          }),
-          listTileBuilder("Help and Support", Icons.help_center, () {}),
-          listTileBuilder("Language", Icons.language, () {}),
-          listTileBuilder("Services", Icons.support, () {}),
         ],
       ),
     );
