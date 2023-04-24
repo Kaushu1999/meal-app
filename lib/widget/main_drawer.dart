@@ -53,8 +53,13 @@ class MainDrawer extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                listTileBuilder("Meals", Icons.restaurant,
-                    () => {Navigator.of(context).pushReplacementNamed("/")}),
+                listTileBuilder(
+                    "Meals",
+                    Icons.restaurant,
+                    () => {
+                          Navigator.of(context)
+                              .pushReplacementNamed("/TabScreen")
+                        }),
                 listTileBuilder("Filters", Icons.settings, () {
                   Navigator.of(context).pushReplacementNamed("/filter");
                 }),

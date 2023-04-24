@@ -4,6 +4,7 @@ import "./dummy_data.dart";
 import "./modals/meal.dart";
 import "Screens/categories_meal_screen/categories_meal_screen.dart";
 import "./Screens/meal_details_screen/meal_details_screen.dart";
+import "Screens/landing_app_screen/landing_screen.dart";
 import "./Screens/tabs_screen/tab_screen.dart";
 
 void main() {
@@ -83,7 +84,7 @@ class _MyAppState extends State<MyApp> {
             titleLarge: const TextStyle(
                 fontSize: 24,
                 fontFamily: "RobotoCondensed",
-                fontWeight: FontWeight.bold)),
+                fontWeight: FontWeight.w700)),
         // primarySwatch: Color.fromRGBO(5, 63, 93, 1),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color.fromRGBO(5, 63, 93, 1),
@@ -92,7 +93,8 @@ class _MyAppState extends State<MyApp> {
       ),
       // home: const MyHomePage(),
       routes: {
-        "/": (context) => TabScreen(favoritesMeals),
+        "/": (context) => const LandingScreen(),
+        TabScreen.routeName: (context) => TabScreen(favoritesMeals),
         CategoriesMealsScreen.routeName: (context) =>
             CategoriesMealsScreen(availableMeals: _availableMeals),
         MealDetailScreen.routeName: (context) =>
