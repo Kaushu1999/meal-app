@@ -60,85 +60,86 @@ class _LandingScreenState extends State<LandingScreen> {
                 height: 300,
                 // color: Colors.amber,
                 child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 2, vertical: 5),
-                              width: 200,
-                              height: 45,
-                              decoration: const BoxDecoration(
-                                // color: Color.fromARGB(255, 253, 218, 111),
-                                color: const Color.fromRGBO(5, 63, 93, 1),
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 2, vertical: 5),
+                            width: 200,
+                            height: 45,
+                            decoration: const BoxDecoration(
+                              // color: Color.fromARGB(255, 253, 218, 111),
+                              color: const Color.fromRGBO(5, 63, 93, 1),
 
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  topRight: Radius.circular(10),
-                                ),
-                                // border: Border.all(width: 0), // 0.1 to
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
                               ),
-                              child: const Center(
-                                child: Text(
-                                  "MEALS APP",
-                                  style: TextStyle(
-                                    fontFamily: "Raleway",
-                                    fontSize: 20,
-                                    // fontWeight: FontWeight.w700,
-                                    // color: const Color.fromRGBO(5, 63, 93, 1),
-                                    color: Color.fromARGB(255, 253, 218, 111),
+                              // border: Border.all(width: 0), // 0.1 to
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "MEALS APP",
+                                style: TextStyle(
+                                  fontFamily: "Raleway",
+                                  fontSize: 20,
+                                  // fontWeight: FontWeight.w700,
+                                  // color: const Color.fromRGBO(5, 63, 93, 1),
+                                  color: Color.fromARGB(255, 253, 218, 111),
 
-                                    decoration: TextDecoration.none,
-                                  ),
+                                  decoration: TextDecoration.none,
                                 ),
                               ),
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 0),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 2, vertical: 5),
-                              width: 250,
-                              height: 28,
-                              decoration: BoxDecoration(
-                                // color: const Color.fromARGB(255, 253, 218, 111),
-                                color: const Color.fromRGBO(5, 63, 93, 1),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(top: 0),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 2, vertical: 5),
+                            width: 250,
+                            height: 28,
+                            decoration: BoxDecoration(
+                              // color: const Color.fromARGB(255, 253, 218, 111),
+                              color: const Color.fromRGBO(5, 63, 93, 1),
 
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "So what are you going to cook today?",
-                                  style: TextStyle(
-                                    fontFamily: "RobotoCondensed",
-                                    fontStyle: FontStyle.italic,
-                                    fontSize: 16,
-                                    // color: Color.fromRGBO(5, 63, 93, 1),
-                                    color: Color.fromARGB(255, 253, 218, 111),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "So what are you going to cook today?",
+                                style: TextStyle(
+                                  fontFamily: "RobotoCondensed",
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 16,
+                                  // color: Color.fromRGBO(5, 63, 93, 1),
+                                  color: Color.fromARGB(255, 253, 218, 111),
 
-                                    decoration: TextDecoration.none,
-                                  ),
+                                  decoration: TextDecoration.none,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        child: const FittedBox(
-                          fit: BoxFit.fitHeight,
-                          child: Text(
-                            'Tap anywhere to continue!',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Montserrat',
-                              fontSize: 20,
-                            ),
+                    ),
+                    Container(
+                      child: const FittedBox(
+                        fit: BoxFit.fitHeight,
+                        child: Text(
+                          'Tap anywhere to continue!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Montserrat',
+                            fontSize: 20,
                           ),
                         ),
                       ),
-                    ]),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
