@@ -3,8 +3,10 @@ import 'package:meal_app/widget/main_drawer.dart';
 
 class FilterScreen extends StatefulWidget {
   static const routeName = "/filter";
-  const FilterScreen({super.key});
+  final Function _saveFilters;
+  final Map<String, bool> currentFilter;
 
+  const FilterScreen(this.currentFilter, this._saveFilters, {super.key});
   @override
   State<FilterScreen> createState() => _FilterScreenState();
 }
@@ -14,6 +16,16 @@ class _FilterScreenState extends State<FilterScreen> {
   var vegan = false;
   var vegetarian = false;
   var lactoseFree = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // print("this is widget check ${widget.currentFilter["glutenFree"]}");
+    glutenFree = widget.currentFilter["gluten"] as bool;
+    vegan = widget.currentFilter["vegan"] as bool;
+    vegetarian = widget.currentFilter["vegetarian"] as bool;
+    lactoseFree = widget.currentFilter["lactose"] as bool;
+  }
 
   Widget builderListSwitchtile(
       String title, String description, bool currentValue, swichSelector) {
@@ -33,6 +45,21 @@ class _FilterScreenState extends State<FilterScreen> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Your Filters!"),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.save),
+              onPressed: () {
+                final selectedFilters = {
+                  "gluten": glutenFree,
+                  "lactose": lactoseFree,
+                  "vegan": vegan,
+                  "vegetarian": vegetarian
+                };
+                print("on save click $selectedFilters");
+                widget._saveFilters(selectedFilters);
+              },
+            ),
+          ],
         ),
         drawer: const MainDrawer(),
         // body: const Text("filter"));
@@ -66,6 +93,8 @@ class _FilterScreenState extends State<FilterScreen> {
                     setState(() {
                       vegetarian = newValue;
                     });
+
+                    print("vegan selected $newValue");
                   }),
                   builderListSwitchtile(
                       "lactoseFree",

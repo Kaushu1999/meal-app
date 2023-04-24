@@ -118,7 +118,7 @@ const DUMMY_MEALS = [
     isGlutenFree: false,
     isVegan: false,
     isVegetarian: false,
-    isLactoseFree: false,
+    isLactoseFree: true,
   ),
   Meal(
     id: 'm3',
